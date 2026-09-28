@@ -75,4 +75,16 @@ musicToggle.addEventListener('click',function(){
 });
 music.addEventListener('play',updateMusicButton);
 music.addEventListener('pause',updateMusicButton);
-music.play().then(updateMusicButton).catch(updateMusicButton);
+var musicStarted=false;
+function startMusicAfterInteraction(){
+  if(musicStarted)return;
+  music.play().then(function(){
+    musicStarted=true;
+    updateMusicButton();
+    document.removeEventListener('pointerdown',startMusicAfterInteraction);
+    document.removeEventListener('keydown',startMusicAfterInteraction);
+  }).catch(updateMusicButton);
+}
+document.addEventListener('pointerdown',startMusicAfterInteraction);
+document.addEventListener('keydown',startMusicAfterInteraction);
+music.play().then(function(){musicStarted=true;updateMusicButton()}).catch(updateMusicButton);
