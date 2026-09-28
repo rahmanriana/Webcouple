@@ -6,8 +6,13 @@ G.forEach(function(g,i){var f=document.createElement('figure');
   gal.appendChild(f)});
 
 // Muncul saat di-scroll
-var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
-document.querySelectorAll('.rv').forEach(function(e){io.observe(e)});
+var revealItems=document.querySelectorAll('.rv');
+if('IntersectionObserver' in window){
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+  revealItems.forEach(function(e){io.observe(e)});
+}else{
+  revealItems.forEach(function(e){e.classList.add('in')});
+}
 
 // Hati melayang di hero
 var hero=document.querySelector('.hero');

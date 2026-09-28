@@ -68,7 +68,7 @@ button:focus-visible,a:focus-visible{outline:3px solid var(--rose);outline-offse
 @media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#21131b;--card:#30202a;--ink:#fff1f7;--soft:#d4b4c4;--rose:#ff83b0;--blush:#503447;--line:#765064;color-scheme:dark}}
 body{background:radial-gradient(ellipse at 10% 15%,rgba(244,190,212,.18),transparent 34%),var(--bg)}
 .hero{min-height:100svh;background:linear-gradient(135deg,#a52c61 0%,#d84c83 48%,#f39bbb 100%);background-size:200% 200%;animation:bg 16s ease-in-out infinite}
-.hero:after{content:";position:absolute;inset:0;background:radial-gradient(circle at 50% 38%,rgba(255,255,255,.17),transparent 42%);pointer-events:none}
+.hero:after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 38%,rgba(255,255,255,.17),transparent 42%);pointer-events:none}
 .ph{border-width:5px;border-radius:20px;box-shadow:0 14px 32px rgba(63,17,39,.18)}
 section{padding:76px 22px}h2{letter-spacing:-.025em}.sub{max-width:38rem;margin:6px auto 34px}
 .gal{gap:16px}.gal figure{border:0;border-radius:20px;box-shadow:0 12px 30px rgba(92,35,62,.09)}.gal figcaption{padding:11px 10px 13px;background:var(--card)}
