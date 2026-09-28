@@ -1,5 +1,14 @@
 // GALERI: ganti null dengan alamat foto ("foto1.jpg") atau data URI
-var G=[[null,"Momen pertama"],[null,"Jalan berdua"],[null,"Makan bareng"],[null,"Senyum kamu"],[null,"Hari jadian"],[null,"Liburan"],[null,"Ketawa lepas"],[null,"Kita"]];
+var G=[
+  ['images/Momen%20Pertama.jpeg','Momen pertama'],
+  ['images/Jalan%20Bareng.jpeg','Jalan berdua'],
+  ['images/Cari%20Makan.jpeg','Makan bareng'],
+  ['images/Senyum%20Kamu.jpeg','Senyum kamu'],
+  ['images/Bahagia%20Bareng.jpeg','Bahagia bareng'],
+  ['images/Liburan%20Bareng.jpeg','Liburan'],
+  ['images/Ketawa.jpeg','Ketawa lepas'],
+  ['images/Kita.jpeg','Kita']
+];
 var gal=document.getElementById('gal');
 G.forEach(function(g,i){var f=document.createElement('figure');
   f.innerHTML=(g[0]?'<img loading="lazy" alt="'+g[1]+'" src="'+g[0]+'">':'<div class="ghost">💗</div>')+'<figcaption>'+g[1]+'</figcaption>';
