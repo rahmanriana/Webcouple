@@ -56,18 +56,19 @@
     <p class="sign">Rahman</p>
   </div>
 </section>
-
-<section class="rv">
-  <h2>Lagu Kita</h2>
-  <p class="sub">Beautiful in White — Shane Filan</p>
-  <div class="music-player">
-    <iframe
-      src="https://www.youtube-nocookie.com/embed/06-XXOTP3Gc?rel=0"
-      title="Shane Filan - Beautiful in White (Official Video)"
-      loading="lazy"
-      referrerpolicy="strict-origin-when-cross-origin"
-      allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; web-share"
-      allowfullscreen></iframe>
+<section class="rv music-section">
+  <div class="music-card">
+    <div class="music-copy">
+      <p class="music-kicker">Lagu kita</p>
+      <h2>Beautiful in White</h2>
+      <p class="music-artist">Shane Filan</p>
+    </div>
+    <button class="music-toggle" id="musicToggle" type="button" aria-pressed="false">
+      <span aria-hidden="true">▶</span> Putar lagu
+    </button>
+    <audio id="backgroundMusic" preload="auto" autoplay loop>
+      <source src="audio/Shane%20Filan%20-%20Beautiful%20In%20White%20(Official%20Video).mp3" type="audio/mpeg">
+    </audio>
   </div>
 </section>
 

@@ -60,3 +60,19 @@ document.getElementById('secret').onclick=function(){
     document.body.appendChild(e);setTimeout(function(){e.remove()},4000);
   })()}
 };
+
+// Pemutar lagu: coba putar otomatis, lalu sediakan tombol jika browser meminta interaksi.
+var music=document.getElementById('backgroundMusic');
+var musicToggle=document.getElementById('musicToggle');
+function updateMusicButton(){
+  var playing=!music.paused;
+  musicToggle.setAttribute('aria-pressed',String(playing));
+  musicToggle.innerHTML=playing?'<span aria-hidden="true">❚❚</span> Jeda lagu':'<span aria-hidden="true">▶</span> Putar lagu';
+}
+musicToggle.addEventListener('click',function(){
+  if(music.paused){music.play().then(updateMusicButton).catch(updateMusicButton)}
+  else{music.pause();updateMusicButton()}
+});
+music.addEventListener('play',updateMusicButton);
+music.addEventListener('pause',updateMusicButton);
+music.play().then(updateMusicButton).catch(updateMusicButton);
